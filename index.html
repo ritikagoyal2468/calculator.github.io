@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>
+    <title> calculator </title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <div class="pprs2">
+    <div class="center-block2 inv">
+        <span id="lblMsg"></span> 
+        <div class="search-form">
+            <form action="#">
+                <div class="releases-month">
+                  <select class="dropdownvisible1">
+                    <!--<option>month - Select</option>-->
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+                    
+                </div>
+                <div class="releases-year">
+                    <select class="dropdownvisible2">
+                        <!--<option>Year - Select</option>-->
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="gap30"></div>
+        <div class="overflow-auto">
+            <table class="table-box">
+                <thead>
+                    <tr>
+                        <th colspan="2">Total Family Members including yourself:</th>
+                        <th><input name="txt_0" type="text" maxlength="10" id="txt_0" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(0);" style="text-align:right;"></th>
+                        <th></th>
+                    </tr>
+                        <tr>
+                            <th style="width:20%;">Activity / Fuel Use</th>
+                            <th style="width:20%;">Quantity</th>
+                            <th style="width:20%;">CO2 (kg)</th>
+                            <th>Notes</th>
+                        </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <td colspan="4" style="text-align:left;"><strong>Transportation</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Petrol (litres)</td>
+                        <td><input name="txt_1" type="text" maxlength="5" id="txt_1" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(1);" style="text-align:right;"></td>
+                        <td><input name="d_txt_1" type="text" maxlength="5" id="d_txt_1" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td rowspan="2" style=" background:#eff1f2;">Fuel in litres as used in personal vehicle. In case of car pool, divide total fuel volume by total number of people.  All people in the car pool need to account for the divided fuel volume.</td>
+                    </tr>
+                    <tr>
+                        <td>Diesel fuel (litres)</td>
+                        <td><input name="txt_2" type="text" maxlength="5" id="txt_2" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(2);" style="text-align:right;"></td>
+                        <td><input name="d_txt_2" type="text" maxlength="5" id="d_txt_2" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr>
+                    <tr>
+                        <td>Auto LPG (kg)</td>
+                        <td><input name="txt_3" type="text" maxlength="5" id="txt_3" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(3);" style="text-align:right;"></td>
+                        <td><input name="d_txt_3" type="text" maxlength="5" id="d_txt_3" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td>If you use a car that uses LPG as the fuel.</td>                    
+                    </tr>
+                    <tr>
+                        <td>Taxis (km)</td>
+                        <td><input name="txt_4" type="text" maxlength="5" id="txt_4" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(4);" style="text-align:right;"></td>
+                        <td><input name="d_txt_4" type="text" maxlength="5" id="d_txt_4" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td rowspan="4">For these modes of Public Transport, fill in approximate distance used.</td>
+                    </tr>
+                    <tr>
+                        <td>Local bus (BEST / Company Bus) (km)</td>
+                        <td><input name="txt_5" type="text" maxlength="5" id="txt_5" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(5);" style="text-align:right;"></td>
+                        <td><input name="d_txt_5" type="text" maxlength="5" id="d_txt_5" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr>
+                    <tr>
+                        <td>Autorickshaw (km)</td>
+                        <td><input name="txt_6" type="text" maxlength="5" id="txt_6" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(6);" style="text-align:right;"></td>
+                        <td><input name="d_txt_6" type="text" maxlength="5" id="d_txt_6" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr>
+                    <tr>
+                        <td>Local train (km)</td>
+                        <td><input name="txt_7" type="text" maxlength="5" id="txt_7" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(7);" style="text-align:right;"></td>
+                        <td><input name="d_txt_7" type="text" maxlength="5" id="d_txt_7" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr> 
+                    <tr>
+                        <td colspan="4" style="text-align:left;"><strong>Domestic Use</strong></td>
+                    </tr> 
+                    <tr>
+                        <td>Number of LPG Cylinders Used for cooking</td>
+                        <td><input name="txt_8" type="text" maxlength="5" id="txt_8" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(8);" style="text-align:right;"></td>
+                        <td><input name="d_txt_8" type="text" maxlength="5" id="d_txt_8" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td rowspan="3">These reflect you residential consumption. You should get these values from keeping track of the LPG cylinders and from your CNG and electric bills.</td>
+                    </tr> 
+                    <tr>
+                        <td>Amount of CNG used at home (m3)</td>
+                        <td><input name="txt_9" type="text" maxlength="5" id="txt_9" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(9);" style="text-align:right;"></td>
+                        <td><input name="d_txt_9" type="text" maxlength="5" id="d_txt_9" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr> 
+                    <tr>
+                        <td>Electricity used in a month (kWh)</td>
+                        <td><input name="txt_10" type="text" maxlength="5" id="txt_10" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(10);" style="text-align:right;"></td>
+                        <td><input name="d_txt_10" type="text" maxlength="5" id="d_txt_10" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr> 
+                    <tr>
+                        <td>MY Total emissions per Month (kg CO2/Month)</td>
+                        <td></td>
+                        <td><input name="txtmonthtotal" type="text" maxlength="5" id="txtmonthtotal" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>MY AVG. ANNUAL Carbon Footprint (Tons of CO2)</td>
+                        <td></td>
+                        <td><input name="txtyeartotal" type="text" maxlength="5" id="txtyeartotal" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td>This figure is based on this month's usage.</td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+        <div class="gap30"></div>
+        <div class="gap30"></div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+    function calculate_total(i)
+        {
+        if(i>0)
+            {
+            if(document.getElementById('txt_'+i).value.search(/\S/) != -1)
+                {
+                if(isNaN(document.getElementById('txt_'+i).value) == false)
+                    {
+                    if(document.getElementById('txt_'+i).value>=0)
+                        {
+                        document.getElementById('d_txt_'+i).value = (document.getElementById('txt_'+i).value * cal_factor[i]).toFixed(2);
+                        }
+                    else
+                        {
+                        document.getElementById('d_txt_'+i).value = '';
+                        }
+                    }
+                else
+                {
+                document.getElementById('d_txt_'+i).value = '';
+                }
+                }
+            else
+            {
+            document.getElementById('d_txt_'+i).value = '';
+            }
+            }
+        
+        var monthTotal = 0;
+        var totalmember = 0;
+        var tmp;
+        for(tmp=1; tmp<=7; tmp++)
+            {
+            if(document.getElementById('d_txt_'+tmp).value.search(/\S/) != -1)
+                {
+                if(isNaN(document.getElementById('d_txt_'+tmp).value) == false)
+                    {
+                    if(document.getElementById('d_txt_'+tmp).value>=0)
+                        {
+                        monthTotal = monthTotal + parseFloat(document.getElementById('d_txt_'+tmp).value);
+                        }
+                    }
+                }
+            }
+        
+        if(document.getElementById('txt_0').value.search(/\S/) != -1)
+            {
+            if(isNaN(document.getElementById('txt_0').value) == false)
+                {
+                if(document.getElementById('txt_0').value>=0)
+                    {
+                    if(document.getElementById('txt_0').value.indexOf('.') == -1)
+                        {
+                        totalmember = document.getElementById('txt_0').value;
+                        }
+                    }
+                }
+            }
+        
+        if(totalmember>0)
+            {            
+            for(tmp=8; tmp<=10; tmp++)
+                {
+                if(document.getElementById('d_txt_'+tmp).value.search(/\S/) != -1)
+                    {
+                    if(isNaN(document.getElementById('d_txt_'+tmp).value) == false)
+                        {
+                        if(document.getElementById('d_txt_'+tmp).value>=0)
+                            {
+                            monthTotal = monthTotal + parseFloat(document.getElementById('d_txt_'+tmp).value/totalmember);
+                            }
+                        }
+                    }
+                }
+            }
+        
+        if(monthTotal>0)
+            {
+              document.getElementById('txtmonthtotal').value = monthTotal.toFixed(2);
+              document.getElementById('txtyeartotal').value = (monthTotal*12/1000).toFixed(2);
+            }
+        else
+        {
+            document.getElementById('txtmonthtotal').value = '';
+            document.getElementById('txtyeartotal').value = '';
+        }
+        //calculate_total(i)
+    }
+    
+    var cal_factor=new Array();
+    cal_factor[0]="";
+    cal_factor[1]="2.327";
+    cal_factor[2]="2.68134633426855";
+    cal_factor[3]="3.05911236953988";
+    cal_factor[4]="0.305911236953988";
+    cal_factor[5]="0.0536";
+    cal_factor[6]=parseFloat("0.054/(28.31*3.629*25)");
+    cal_factor[7]="0.1";
+    cal_factor[8]="42.5";
+    cal_factor[9]="1.82";
+    cal_factor[10]="0.9";
+    </script>
+</body>
