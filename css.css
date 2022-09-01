@@ -96,3 +96,20 @@ table-box td {
     text-align: center;
     color: #282828;
 }
+.overflow-auto {
+    width: 100%;
+    overflow: auto;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.table-box tr:nth-of-type(odd) {
+    background: #eff1f2;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
